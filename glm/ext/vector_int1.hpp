@@ -25,8 +25,7 @@ namespace glm
 	/// @{
 
 	/// 1 component vector of signed integer numbers.
-	typedef vec<1, int, defaultp>			ivec1;
+	typedef vec<1, int, defaultp> ivec1;
 
 	/// @}
 }//namespace glm
-

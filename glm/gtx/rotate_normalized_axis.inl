@@ -2,13 +2,10 @@
 
 namespace glm
 {
-	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotateNormalizedAxis
-	(
-		mat<4, 4, T, Q> const& m,
-		T const& angle,
-		vec<3, T, Q> const& v
-	)
+	template <typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotateNormalizedAxis(mat<4, 4, T, Q> const& m,
+															T const& angle,
+															vec<3, T, Q> const& v)
 	{
 		T const a = angle;
 		T const c = cos(a);
@@ -39,13 +36,8 @@ namespace glm
 		return Result;
 	}
 
-	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> rotateNormalizedAxis
-	(
-		qua<T, Q> const& q,
-		T const& angle,
-		vec<3, T, Q> const& v
-	)
+	template <typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER qua<T, Q> rotateNormalizedAxis(qua<T, Q> const& q, T const& angle, vec<3, T, Q> const& v)
 	{
 		vec<3, T, Q> const Tmp(v);
 

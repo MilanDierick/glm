@@ -34,7 +34,7 @@ namespace glm
 	/// round up to a power of two.
 	///
 	/// @see gtc_round
-	template<typename genIUType>
+	template <typename genIUType>
 	GLM_FUNC_DECL genIUType ceilPowerOfTwo(genIUType v);
 
 	/// Return the power of two number which value is just higher the input value,
@@ -45,14 +45,14 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see gtc_round
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> ceilPowerOfTwo(vec<L, T, Q> const& v);
 
 	/// Return the power of two number which value is just lower the input value,
 	/// round down to a power of two.
 	///
 	/// @see gtc_round
-	template<typename genIUType>
+	template <typename genIUType>
 	GLM_FUNC_DECL genIUType floorPowerOfTwo(genIUType v);
 
 	/// Return the power of two number which value is just lower the input value,
@@ -63,13 +63,13 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see gtc_round
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> floorPowerOfTwo(vec<L, T, Q> const& v);
 
 	/// Return the power of two number which value is the closet to the input value.
 	///
 	/// @see gtc_round
-	template<typename genIUType>
+	template <typename genIUType>
 	GLM_FUNC_DECL genIUType roundPowerOfTwo(genIUType v);
 
 	/// Return the power of two number which value is the closet to the input value.
@@ -79,7 +79,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see gtc_round
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> roundPowerOfTwo(vec<L, T, Q> const& v);
 
 	/// Higher multiple number of Source.
@@ -90,7 +90,7 @@ namespace glm
 	/// @param Multiple Must be a null or positive value
 	///
 	/// @see gtc_round
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_DECL genType ceilMultiple(genType v, genType Multiple);
 
 	/// Higher multiple number of Source.
@@ -103,7 +103,7 @@ namespace glm
 	/// @param Multiple Must be a null or positive value
 	///
 	/// @see gtc_round
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> ceilMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
 
 	/// Lower multiple number of Source.
@@ -114,7 +114,7 @@ namespace glm
 	/// @param Multiple Must be a null or positive value
 	///
 	/// @see gtc_round
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_DECL genType floorMultiple(genType v, genType Multiple);
 
 	/// Lower multiple number of Source.
@@ -127,7 +127,7 @@ namespace glm
 	/// @param Multiple Must be a null or positive value
 	///
 	/// @see gtc_round
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> floorMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
 
 	/// Lower multiple number of Source.
@@ -138,7 +138,7 @@ namespace glm
 	/// @param Multiple Must be a null or positive value
 	///
 	/// @see gtc_round
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_DECL genType roundMultiple(genType v, genType Multiple);
 
 	/// Lower multiple number of Source.
@@ -151,7 +151,7 @@ namespace glm
 	/// @param Multiple Must be a null or positive value
 	///
 	/// @see gtc_round
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> roundMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
 
 	/// @}

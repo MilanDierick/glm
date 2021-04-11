@@ -27,7 +27,7 @@ namespace glm
 	/// Signed integer 4x2 matrix.
 	///
 	/// @see ext_matrix_int4x2
-	typedef mat<4, 2, int, defaultp>	imat4x2;
+	typedef mat<4, 2, int, defaultp> imat4x2;
 
 	/// @}
 }//namespace glm

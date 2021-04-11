@@ -6,7 +6,7 @@
 namespace glm
 {
 	// sec
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType sec(genType angle)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'sec' only accept floating-point values");
@@ -14,7 +14,7 @@ namespace glm
 	}
 
 	// csc
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType csc(genType angle)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'csc' only accept floating-point values");
@@ -22,7 +22,7 @@ namespace glm
 	}
 
 	// cot
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType cot(genType angle)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'cot' only accept floating-point values");
@@ -32,7 +32,7 @@ namespace glm
 	}
 
 	// asec
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType asec(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'asec' only accept floating-point values");
@@ -40,7 +40,7 @@ namespace glm
 	}
 
 	// acsc
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType acsc(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'acsc' only accept floating-point values");
@@ -48,7 +48,7 @@ namespace glm
 	}
 
 	// acot
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType acot(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'acot' only accept floating-point values");
@@ -58,7 +58,7 @@ namespace glm
 	}
 
 	// sech
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType sech(genType angle)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'sech' only accept floating-point values");
@@ -66,7 +66,7 @@ namespace glm
 	}
 
 	// csch
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType csch(genType angle)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'csch' only accept floating-point values");
@@ -74,7 +74,7 @@ namespace glm
 	}
 
 	// coth
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType coth(genType angle)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'coth' only accept floating-point values");
@@ -82,7 +82,7 @@ namespace glm
 	}
 
 	// asech
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType asech(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'asech' only accept floating-point values");
@@ -90,7 +90,7 @@ namespace glm
 	}
 
 	// acsch
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType acsch(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'acsch' only accept floating-point values");
@@ -98,7 +98,7 @@ namespace glm
 	}
 
 	// acoth
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER genType acoth(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'acoth' only accept floating-point values");

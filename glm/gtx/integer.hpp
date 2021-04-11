@@ -47,12 +47,12 @@ namespace glm
 
 	//! Return the factorial value of a number (!12 max, integer only)
 	//! From GLM_GTX_integer extension.
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_DECL genType factorial(genType const& x);
 
 	//! 32bit signed integer.
 	//! From GLM_GTX_integer extension.
-	typedef signed int					sint;
+	typedef signed int sint;
 
 	//! Returns x raised to the y power.
 	//! From GLM_GTX_integer extension.

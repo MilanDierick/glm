@@ -29,8 +29,7 @@ namespace glm
 	/// @{
 
 	/// Quaternion of single-precision floating-point numbers.
-	typedef qua<float, defaultp>		quat;
+	typedef qua<float, defaultp> quat;
 
 	/// @}
 } //namespace glm
-

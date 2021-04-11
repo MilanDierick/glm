@@ -24,10 +24,10 @@ namespace glm
 	/// @addtogroup ext_matrix_common
 	/// @{
 
-	template<length_t C, length_t R, typename T, typename U, qualifier Q>
+	template <length_t C, length_t R, typename T, typename U, qualifier Q>
 	GLM_FUNC_DECL mat<C, R, T, Q> mix(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, mat<C, R, U, Q> const& a);
 
-	template<length_t C, length_t R, typename T, typename U, qualifier Q>
+	template <length_t C, length_t R, typename T, typename U, qualifier Q>
 	GLM_FUNC_DECL mat<C, R, T, Q> mix(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, U a);
 
 	/// @}

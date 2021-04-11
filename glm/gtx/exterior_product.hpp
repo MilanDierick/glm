@@ -36,7 +36,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see <a href="https://en.wikipedia.org/wiki/Exterior_algebra#Cross_and_triple_products">Exterior product</a>
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL T cross(vec<2, T, Q> const& v, vec<2, T, Q> const& u);
 
 	/// @}

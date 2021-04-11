@@ -585,11 +585,11 @@ namespace std {
 namespace glm
 {
 	using std::size_t;
-#	if GLM_CONFIG_LENGTH_TYPE == GLM_LENGTH_SIZE_T
+	#	if GLM_CONFIG_LENGTH_TYPE == GLM_LENGTH_SIZE_T
 		typedef size_t length_t;
-#	else
-		typedef int length_t;
-#	endif
+	#	else
+	typedef int length_t;
+	#	endif
 }//namespace glm
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -598,14 +598,11 @@ namespace glm
 #if GLM_HAS_CONSTEXPR
 #	define GLM_CONFIG_CONSTEXP GLM_ENABLE
 
-	namespace glm
-	{
-		template<typename T, std::size_t N>
-		constexpr std::size_t countof(T const (&)[N])
-		{
-			return N;
-		}
-	}//namespace glm
+namespace glm
+{
+	template <typename T, std::size_t N>
+	constexpr std::size_t countof(T const (&)[N]) { return N; }
+}//namespace glm
 #	define GLM_COUNTOF(arr) glm::countof(arr)
 #elif defined(_MSC_VER)
 #	define GLM_CONFIG_CONSTEXP GLM_DISABLE
@@ -620,29 +617,30 @@ namespace glm
 ///////////////////////////////////////////////////////////////////////////////////
 // uint
 
-namespace glm{
-namespace detail
+namespace glm
 {
-	template<typename T>
-	struct is_int
+	namespace detail
 	{
-		enum test {value = 0};
-	};
+		template <typename T>
+		struct is_int
+		{
+			enum test { value = 0 };
+		};
 
-	template<>
-	struct is_int<unsigned int>
-	{
-		enum test {value = ~0};
-	};
+		template <>
+		struct is_int<unsigned int>
+		{
+			enum test { value = ~0 };
+		};
 
-	template<>
-	struct is_int<signed int>
-	{
-		enum test {value = ~0};
-	};
-}//namespace detail
+		template <>
+		struct is_int<signed int>
+		{
+			enum test { value = ~0 };
+		};
+	}//namespace detail
 
-	typedef unsigned int	uint;
+	typedef unsigned int uint;
 }//namespace glm
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -652,31 +650,32 @@ namespace detail
 #	include <cstdint>
 #endif
 
-namespace glm{
-namespace detail
+namespace glm
 {
-#	if GLM_HAS_EXTENDED_INTEGER_TYPE
-		typedef std::uint64_t						uint64;
-		typedef std::int64_t						int64;
-#	elif (defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 199901L)) // C99 detected, 64 bit types available
+	namespace detail
+	{
+		#	if GLM_HAS_EXTENDED_INTEGER_TYPE
+		typedef std::uint64_t uint64;
+		typedef std::int64_t int64;
+		#	elif (defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 199901L)) // C99 detected, 64 bit types available
 		typedef uint64_t							uint64;
 		typedef int64_t								int64;
-#	elif GLM_COMPILER & GLM_COMPILER_VC
+		#	elif GLM_COMPILER & GLM_COMPILER_VC
 		typedef unsigned __int64					uint64;
 		typedef signed __int64						int64;
-#	elif GLM_COMPILER & GLM_COMPILER_GCC
+		#	elif GLM_COMPILER & GLM_COMPILER_GCC
 #		pragma GCC diagnostic ignored "-Wlong-long"
 		__extension__ typedef unsigned long long	uint64;
 		__extension__ typedef signed long long		int64;
-#	elif (GLM_COMPILER & GLM_COMPILER_CLANG)
+		#	elif (GLM_COMPILER & GLM_COMPILER_CLANG)
 #		pragma clang diagnostic ignored "-Wc++11-long-long"
 		typedef unsigned long long					uint64;
 		typedef signed long long					int64;
-#	else//unknown compiler
+		#	else//unknown compiler
 		typedef unsigned long long					uint64;
 		typedef signed long long					int64;
-#	endif
-}//namespace detail
+		#	endif
+	}//namespace detail
 }//namespace glm
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -685,11 +684,12 @@ namespace detail
 #if GLM_HAS_MAKE_SIGNED
 #	include <type_traits>
 
-namespace glm{
-namespace detail
+namespace glm
 {
-	using std::make_unsigned;
-}//namespace detail
+	namespace detail
+	{
+		using std::make_unsigned;
+	}//namespace detail
 }//namespace glm
 
 #else
@@ -965,7 +965,7 @@ namespace detail
 #		pragma message("GLM: C++ language undetected")
 #	endif//GLM_LANG
 
-	// Report compiler detection
+// Report compiler detection
 #	if GLM_COMPILER & GLM_COMPILER_CUDA
 #		pragma message("GLM: CUDA compiler detected")
 #	elif GLM_COMPILER & GLM_COMPILER_VC
@@ -980,7 +980,7 @@ namespace detail
 #		pragma message("GLM: Compiler not detected")
 #	endif
 
-	// Report build target
+// Report build target
 #	if (GLM_ARCH & GLM_ARCH_AVX2_BIT) && (GLM_MODEL == GLM_MODEL_64)
 #		pragma message("GLM: x86 64 bits with AVX2 instruction set build target")
 #	elif (GLM_ARCH & GLM_ARCH_AVX2_BIT) && (GLM_MODEL == GLM_MODEL_32)
@@ -1044,7 +1044,7 @@ namespace detail
 #		pragma message("GLM: Unknown build target")
 #	endif//GLM_ARCH
 
-	// Report platform name
+// Report platform name
 #	if(GLM_PLATFORM & GLM_PLATFORM_QNXNTO)
 #		pragma message("GLM: QNX platform detected")
 //#	elif(GLM_PLATFORM & GLM_PLATFORM_IOS)
@@ -1069,12 +1069,12 @@ namespace detail
 #		pragma message("GLM: platform not detected")
 #	endif
 
-	// Report whether only xyzw component are used
+// Report whether only xyzw component are used
 #	if defined GLM_FORCE_XYZW_ONLY
 #		pragma message("GLM: GLM_FORCE_XYZW_ONLY is defined. Only x, y, z and w component are available in vector type. This define disables swizzle operators and SIMD instruction sets.")
 #	endif
 
-	// Report swizzle operator support
+// Report swizzle operator support
 #	if GLM_CONFIG_SWIZZLE == GLM_SWIZZLE_OPERATOR
 #		pragma message("GLM: GLM_FORCE_SWIZZLE is defined, swizzling operators enabled.")
 #	elif GLM_CONFIG_SWIZZLE == GLM_SWIZZLE_FUNCTION
@@ -1083,7 +1083,7 @@ namespace detail
 #		pragma message("GLM: GLM_FORCE_SWIZZLE is undefined. swizzling functions or operators are disabled.")
 #	endif
 
-	// Report .length() type
+// Report .length() type
 #	if GLM_CONFIG_LENGTH_TYPE == GLM_LENGTH_SIZE_T
 #		pragma message("GLM: GLM_FORCE_SIZE_T_LENGTH is defined. .length() returns a glm::length_t, a typedef of std::size_t.")
 #	else

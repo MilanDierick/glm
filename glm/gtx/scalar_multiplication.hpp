@@ -32,13 +32,13 @@
 
 namespace glm
 {
-	template<typename T, typename Vec>
+	template <typename T, typename Vec>
 	using return_type_scalar_multiplication = typename std::enable_if<
 		!std::is_same<T, float>::value       // T may not be a float
 		&& std::is_arithmetic<T>::value, Vec // But it may be an int or double (no vec3 or mat3, ...)
 	>::type;
 
-#define GLM_IMPLEMENT_SCAL_MULT(Vec) \
+	#define GLM_IMPLEMENT_SCAL_MULT(Vec) \
 	template<typename T> \
 	return_type_scalar_multiplication<T, Vec> \
 	operator*(T const& s, Vec rh){ \
@@ -57,19 +57,19 @@ namespace glm
 		return lh *= 1.0f / static_cast<float>(s); \
 	}
 
-GLM_IMPLEMENT_SCAL_MULT(vec2)
-GLM_IMPLEMENT_SCAL_MULT(vec3)
-GLM_IMPLEMENT_SCAL_MULT(vec4)
+	GLM_IMPLEMENT_SCAL_MULT(vec2)
+	GLM_IMPLEMENT_SCAL_MULT(vec3)
+	GLM_IMPLEMENT_SCAL_MULT(vec4)
 
-GLM_IMPLEMENT_SCAL_MULT(mat2)
-GLM_IMPLEMENT_SCAL_MULT(mat2x3)
-GLM_IMPLEMENT_SCAL_MULT(mat2x4)
-GLM_IMPLEMENT_SCAL_MULT(mat3x2)
-GLM_IMPLEMENT_SCAL_MULT(mat3)
-GLM_IMPLEMENT_SCAL_MULT(mat3x4)
-GLM_IMPLEMENT_SCAL_MULT(mat4x2)
-GLM_IMPLEMENT_SCAL_MULT(mat4x3)
-GLM_IMPLEMENT_SCAL_MULT(mat4)
+	GLM_IMPLEMENT_SCAL_MULT(mat2)
+	GLM_IMPLEMENT_SCAL_MULT(mat2x3)
+	GLM_IMPLEMENT_SCAL_MULT(mat2x4)
+	GLM_IMPLEMENT_SCAL_MULT(mat3x2)
+	GLM_IMPLEMENT_SCAL_MULT(mat3)
+	GLM_IMPLEMENT_SCAL_MULT(mat3x4)
+	GLM_IMPLEMENT_SCAL_MULT(mat4x2)
+	GLM_IMPLEMENT_SCAL_MULT(mat4x3)
+	GLM_IMPLEMENT_SCAL_MULT(mat4)
 
-#undef GLM_IMPLEMENT_SCAL_MULT
+	#undef GLM_IMPLEMENT_SCAL_MULT
 } // namespace glm

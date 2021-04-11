@@ -28,43 +28,42 @@ namespace glm
 	/// 8 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint8, defaultp>				u8mat3x3;
+	typedef mat<3, 3, uint8, defaultp> u8mat3x3;
 
 	/// 16 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint16, defaultp>				u16mat3x3;
+	typedef mat<3, 3, uint16, defaultp> u16mat3x3;
 
 	/// 32 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint32, defaultp>				u32mat3x3;
+	typedef mat<3, 3, uint32, defaultp> u32mat3x3;
 
 	/// 64 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint64, defaultp>				u64mat3x3;
-
+	typedef mat<3, 3, uint64, defaultp> u64mat3x3;
 
 	/// 8 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint8, defaultp>				u8mat3;
+	typedef mat<3, 3, uint8, defaultp> u8mat3;
 
 	/// 16 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint16, defaultp>				u16mat3;
+	typedef mat<3, 3, uint16, defaultp> u16mat3;
 
 	/// 32 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint32, defaultp>				u32mat3;
+	typedef mat<3, 3, uint32, defaultp> u32mat3;
 
 	/// 64 bit unsigned integer 3x3 matrix.
 	///
 	/// @see ext_matrix_uint3x3_sized
-	typedef mat<3, 3, uint64, defaultp>				u64mat3;
+	typedef mat<3, 3, uint64, defaultp> u64mat3;
 
 	/// @}
 }//namespace glm

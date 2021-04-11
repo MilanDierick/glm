@@ -131,7 +131,7 @@ namespace detail
 		}
 	};
 
-	#	if GLM_ARCH & GLM_ARCH_AVX_BIT
+#	if GLM_ARCH & GLM_ARCH_AVX_BIT
 	template<qualifier Q>
 	struct compute_vec4_div<double, Q, true>
 	{

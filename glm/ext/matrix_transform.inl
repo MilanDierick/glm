@@ -1,12 +1,12 @@
 namespace glm
 {
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType identity()
 	{
 		return detail::init_gentype<genType, detail::genTypeTrait<genType>::GENTYPE>::identity();
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> translate(mat<4, 4, T, Q> const& m, vec<3, T, Q> const& v)
 	{
 		mat<4, 4, T, Q> Result(m);
@@ -14,7 +14,7 @@ namespace glm
 		return Result;
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotate(mat<4, 4, T, Q> const& m, T angle, vec<3, T, Q> const& v)
 	{
 		T const a = angle;
@@ -45,7 +45,7 @@ namespace glm
 		return Result;
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotate_slow(mat<4, 4, T, Q> const& m, T angle, vec<3, T, Q> const& v)
 	{
 		T const a = angle;
@@ -55,7 +55,7 @@ namespace glm
 
 		vec<3, T, Q> axis = normalize(v);
 
-		Result[0][0] = c + (static_cast<T>(1) - c)      * axis.x     * axis.x;
+		Result[0][0] = c + (static_cast<T>(1) - c) * axis.x * axis.x;
 		Result[0][1] = (static_cast<T>(1) - c) * axis.x * axis.y + s * axis.z;
 		Result[0][2] = (static_cast<T>(1) - c) * axis.x * axis.z - s * axis.y;
 		Result[0][3] = static_cast<T>(0);
@@ -74,7 +74,7 @@ namespace glm
 		return m * Result;
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> scale(mat<4, 4, T, Q> const& m, vec<3, T, Q> const& v)
 	{
 		mat<4, 4, T, Q> Result;
@@ -85,7 +85,7 @@ namespace glm
 		return Result;
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> scale_slow(mat<4, 4, T, Q> const& m, vec<3, T, Q> const& v)
 	{
 		mat<4, 4, T, Q> Result(T(1));
@@ -95,8 +95,10 @@ namespace glm
 		return m * Result;
 	}
 
-	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> lookAtRH(vec<3, T, Q> const& eye, vec<3, T, Q> const& center, vec<3, T, Q> const& up)
+	template <typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> lookAtRH(vec<3, T, Q> const& eye,
+												vec<3, T, Q> const& center,
+												vec<3, T, Q> const& up)
 	{
 		vec<3, T, Q> const f(normalize(center - eye));
 		vec<3, T, Q> const s(normalize(cross(f, up)));
@@ -109,17 +111,19 @@ namespace glm
 		Result[0][1] = u.x;
 		Result[1][1] = u.y;
 		Result[2][1] = u.z;
-		Result[0][2] =-f.x;
-		Result[1][2] =-f.y;
-		Result[2][2] =-f.z;
-		Result[3][0] =-dot(s, eye);
-		Result[3][1] =-dot(u, eye);
+		Result[0][2] = -f.x;
+		Result[1][2] = -f.y;
+		Result[2][2] = -f.z;
+		Result[3][0] = -dot(s, eye);
+		Result[3][1] = -dot(u, eye);
 		Result[3][2] = dot(f, eye);
 		return Result;
 	}
 
-	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> lookAtLH(vec<3, T, Q> const& eye, vec<3, T, Q> const& center, vec<3, T, Q> const& up)
+	template <typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> lookAtLH(vec<3, T, Q> const& eye,
+												vec<3, T, Q> const& center,
+												vec<3, T, Q> const& up)
 	{
 		vec<3, T, Q> const f(normalize(center - eye));
 		vec<3, T, Q> const s(normalize(cross(up, f)));
@@ -141,13 +145,15 @@ namespace glm
 		return Result;
 	}
 
-	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> lookAt(vec<3, T, Q> const& eye, vec<3, T, Q> const& center, vec<3, T, Q> const& up)
+	template <typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> lookAt(vec<3, T, Q> const& eye,
+											  vec<3, T, Q> const& center,
+											  vec<3, T, Q> const& up)
 	{
-#       if (GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT)
+		#       if (GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT)
             return lookAtLH(eye, center, up);
-#       else
-            return lookAtRH(eye, center, up);
-#       endif
+		#       else
+		return lookAtRH(eye, center, up);
+		#       endif
 	}
 }//namespace glm

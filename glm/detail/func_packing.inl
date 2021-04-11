@@ -42,7 +42,7 @@ namespace glm
 			signed short in[2];
 			uint out;
 		} u;
- 
+
 		vec<2, short, defaultp> result(round(clamp(v, -1.0f, 1.0f) * 32767.0f));
 
 		u.in[0] = result[0];
@@ -113,7 +113,7 @@ namespace glm
 		return u.out;
 	}
 
-	GLM_FUNC_QUALIFIER glm::vec4 unpackSnorm4x8(uint p)
+	GLM_FUNC_QUALIFIER vec4 unpackSnorm4x8(uint p)
 	{
 		union
 		{
@@ -130,7 +130,7 @@ namespace glm
 	{
 		union
 		{
-			uint   in[2];
+			uint in[2];
 			double out;
 		} u;
 
@@ -145,7 +145,7 @@ namespace glm
 		union
 		{
 			double in;
-			uint   out[2];
+			uint out[2];
 		} u;
 
 		u.in = v;
@@ -177,13 +177,10 @@ namespace glm
 
 		u.in = v;
 
-		return vec2(
-			detail::toFloat32(u.out[0]),
-			detail::toFloat32(u.out[1]));
+		return vec2(detail::toFloat32(u.out[0]), detail::toFloat32(u.out[1]));
 	}
 }//namespace glm
 
 #if GLM_CONFIG_SIMD == GLM_ENABLE
 #	include "func_packing_simd.inl"
 #endif
-

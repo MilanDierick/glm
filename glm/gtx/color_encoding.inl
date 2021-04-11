@@ -2,17 +2,17 @@
 
 namespace glm
 {
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<3, T, Q> convertLinearSRGBToD65XYZ(vec<3, T, Q> const& ColorLinearSRGB)
 	{
 		vec<3, T, Q> const M(0.490f, 0.17697f, 0.2f);
-		vec<3, T, Q> const N(0.31f,  0.8124f, 0.01063f);
+		vec<3, T, Q> const N(0.31f, 0.8124f, 0.01063f);
 		vec<3, T, Q> const O(0.490f, 0.01f, 0.99f);
 
 		return (M * ColorLinearSRGB + N * ColorLinearSRGB + O * ColorLinearSRGB) * static_cast<T>(5.650675255693055f);
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<3, T, Q> convertLinearSRGBToD50XYZ(vec<3, T, Q> const& ColorLinearSRGB)
 	{
 		vec<3, T, Q> const M(0.436030342570117f, 0.222438466210245f, 0.013897440074263f);
@@ -22,7 +22,7 @@ namespace glm
 		return M * ColorLinearSRGB + N * ColorLinearSRGB + O * ColorLinearSRGB;
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<3, T, Q> convertD65XYZToLinearSRGB(vec<3, T, Q> const& ColorD65XYZ)
 	{
 		vec<3, T, Q> const M(0.41847f, -0.091169f, 0.0009209f);
@@ -32,7 +32,7 @@ namespace glm
 		return M * ColorD65XYZ + N * ColorD65XYZ + O * ColorD65XYZ;
 	}
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<3, T, Q> convertD65XYZToD50XYZ(vec<3, T, Q> const& ColorD65XYZ)
 	{
 		vec<3, T, Q> const M(+1.047844353856414f, +0.029549007606644f, -0.009250984365223f);
@@ -41,5 +41,4 @@ namespace glm
 
 		return M * ColorD65XYZ + N * ColorD65XYZ + O * ColorD65XYZ;
 	}
-
 }//namespace glm

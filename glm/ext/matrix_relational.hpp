@@ -33,7 +33,7 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point or integer scalar types
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
+	template <length_t C, length_t R, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y);
 
 	/// Perform a component-wise not-equal-to comparison of two matrices.
@@ -43,7 +43,7 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point or integer scalar types
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
+	template <length_t C, length_t R, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y);
 
 	/// Returns the component-wise comparison of |x - y| < epsilon.
@@ -53,7 +53,7 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point or integer scalar types
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
+	template <length_t C, length_t R, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, T epsilon);
 
 	/// Returns the component-wise comparison of |x - y| < epsilon.
@@ -63,8 +63,10 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point or integer scalar types
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, vec<C, T, Q> const& epsilon);
+	template <length_t C, length_t R, typename T, qualifier Q>
+	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x,
+													  mat<C, R, T, Q> const& y,
+													  vec<C, T, Q> const& epsilon);
 
 	/// Returns the component-wise comparison of |x - y| < epsilon.
 	/// True if this expression is not satisfied.
@@ -73,7 +75,7 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point or integer scalar types
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
+	template <length_t C, length_t R, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, T epsilon);
 
 	/// Returns the component-wise comparison of |x - y| >= epsilon.
@@ -83,8 +85,10 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point or integer scalar types
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, vec<C, T, Q> const& epsilon);
+	template <length_t C, length_t R, typename T, qualifier Q>
+	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x,
+														 mat<C, R, T, Q> const& y,
+														 vec<C, T, Q> const& epsilon);
 
 	/// Returns the component-wise comparison between two vectors in term of ULPs.
 	/// True if this expression is satisfied.
@@ -93,7 +97,7 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
+	template <length_t C, length_t R, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, int ULPs);
 
 	/// Returns the component-wise comparison between two vectors in term of ULPs.
@@ -103,8 +107,10 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, vec<C, int, Q> const& ULPs);
+	template <length_t C, length_t R, typename T, qualifier Q>
+	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> equal(mat<C, R, T, Q> const& x,
+													  mat<C, R, T, Q> const& y,
+													  vec<C, int, Q> const& ULPs);
 
 	/// Returns the component-wise comparison between two vectors in term of ULPs.
 	/// True if this expression is not satisfied.
@@ -113,7 +119,7 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
+	template <length_t C, length_t R, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, int ULPs);
 
 	/// Returns the component-wise comparison between two vectors in term of ULPs.
@@ -123,8 +129,10 @@ namespace glm
 	/// @tparam R Integer between 1 and 4 included that qualify the number of rows of the matrix
 	/// @tparam T Floating-point
 	/// @tparam Q Value from qualifier enum
-	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y, vec<C, int, Q> const& ULPs);
+	template <length_t C, length_t R, typename T, qualifier Q>
+	GLM_FUNC_DECL GLM_CONSTEXPR vec<C, bool, Q> notEqual(mat<C, R, T, Q> const& x,
+														 mat<C, R, T, Q> const& y,
+														 vec<C, int, Q> const& ULPs);
 
 	/// @}
 }//namespace glm

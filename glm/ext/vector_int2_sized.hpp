@@ -28,22 +28,22 @@ namespace glm
 	/// 8 bit signed integer vector of 2 components type.
 	///
 	/// @see ext_vector_int2_sized
-	typedef vec<2, int8, defaultp>		i8vec2;
+	typedef vec<2, int8, defaultp> i8vec2;
 
 	/// 16 bit signed integer vector of 2 components type.
 	///
 	/// @see ext_vector_int2_sized
-	typedef vec<2, int16, defaultp>		i16vec2;
+	typedef vec<2, int16, defaultp> i16vec2;
 
 	/// 32 bit signed integer vector of 2 components type.
 	///
 	/// @see ext_vector_int2_sized
-	typedef vec<2, int32, defaultp>		i32vec2;
+	typedef vec<2, int32, defaultp> i32vec2;
 
 	/// 64 bit signed integer vector of 2 components type.
 	///
 	/// @see ext_vector_int2_sized
-	typedef vec<2, int64, defaultp>		i64vec2;
+	typedef vec<2, int64, defaultp> i64vec2;
 
 	/// @}
 }//namespace glm

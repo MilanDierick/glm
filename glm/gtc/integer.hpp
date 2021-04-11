@@ -34,7 +34,7 @@ namespace glm
 
 	/// Returns the log2 of x for integer values. Usefull to compute mipmap count from the texture size.
 	/// @see gtc_integer
-	template<typename genIUType>
+	template <typename genIUType>
 	GLM_FUNC_DECL genIUType log2(genIUType x);
 
 	/// @}

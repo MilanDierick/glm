@@ -32,7 +32,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> nextFloat(vec<L, T, Q> const& x);
 
 	/// Return the value(s) ULP distance after the input value(s).
@@ -42,7 +42,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> nextFloat(vec<L, T, Q> const& x, int ULPs);
 
 	/// Return the value(s) ULP distance after the input value(s).
@@ -52,7 +52,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> nextFloat(vec<L, T, Q> const& x, vec<L, int, Q> const& ULPs);
 
 	/// Return the previous ULP value(s) before the input value(s).
@@ -62,7 +62,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> prevFloat(vec<L, T, Q> const& x);
 
 	/// Return the value(s) ULP distance before the input value(s).
@@ -72,7 +72,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> prevFloat(vec<L, T, Q> const& x, int ULPs);
 
 	/// Return the value(s) ULP distance before the input value(s).
@@ -82,7 +82,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> prevFloat(vec<L, T, Q> const& x, vec<L, int, Q> const& ULPs);
 
 	/// Return the distance in the number of ULP between 2 single-precision floating-point scalars.
@@ -91,7 +91,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, int, Q> floatDistance(vec<L, float, Q> const& x, vec<L, float, Q> const& y);
 
 	/// Return the distance in the number of ULP between 2 double-precision floating-point scalars.
@@ -100,7 +100,7 @@ namespace glm
 	/// @tparam Q Value from qualifier enum
 	///
 	/// @see ext_scalar_ulp
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, int64, Q> floatDistance(vec<L, double, Q> const& x, vec<L, double, Q> const& y);
 
 	/// @}

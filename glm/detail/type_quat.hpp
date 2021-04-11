@@ -15,7 +15,7 @@
 
 namespace glm
 {
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	struct qua
 	{
 		// -- Implementation detail --
@@ -25,66 +25,69 @@ namespace glm
 
 		// -- Data --
 
-#		if GLM_SILENT_WARNINGS == GLM_ENABLE
-#			if GLM_COMPILER & GLM_COMPILER_GCC
+		#		if GLM_SILENT_WARNINGS == GLM_ENABLE
+		#			if GLM_COMPILER & GLM_COMPILER_GCC
 #				pragma GCC diagnostic push
 #				pragma GCC diagnostic ignored "-Wpedantic"
-#			elif GLM_COMPILER & GLM_COMPILER_CLANG
+		#			elif GLM_COMPILER & GLM_COMPILER_CLANG
 #				pragma clang diagnostic push
 #				pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
 #				pragma clang diagnostic ignored "-Wnested-anon-types"
-#			elif GLM_COMPILER & GLM_COMPILER_VC
+		#			elif GLM_COMPILER & GLM_COMPILER_VC
 #				pragma warning(push)
 #				pragma warning(disable: 4201)  // nonstandard extension used : nameless struct/union
-#			endif
-#		endif
+		#			endif
+		#		endif
 
-#		if GLM_LANG & GLM_LANG_CXXMS_FLAG
+		#		if GLM_LANG & GLM_LANG_CXXMS_FLAG
 		#pragma warning ( disable: 4201 )
-			union
-			{
-#				ifdef GLM_FORCE_QUAT_DATA_WXYZ
+		union
+		{
+			#				ifdef GLM_FORCE_QUAT_DATA_WXYZ
 					struct { T w, x, y, z; };
-#				else
-					struct { T x, y, z, w; };
-#				endif
-
-				typename detail::storage<4, T, detail::is_aligned<Q>::value>::type data;
-			};
-		#pragma warning ( default: 4201 )
-#		else
-#			ifdef GLM_FORCE_QUAT_DATA_WXYZ
-				T w, x, y, z;
-#			else
+			#				else
+			struct
+			{
 				T x, y, z, w;
-#			endif
-#		endif
+			};
+			#				endif
 
-#		if GLM_SILENT_WARNINGS == GLM_ENABLE
-#			if GLM_COMPILER & GLM_COMPILER_CLANG
+			typename detail::storage<4, T, detail::is_aligned<Q>::value>::type data;
+		};
+		#pragma warning ( default: 4201 )
+		#		else
+		#			ifdef GLM_FORCE_QUAT_DATA_WXYZ
+				T w, x, y, z;
+		#			else
+				T x, y, z, w;
+		#			endif
+		#		endif
+
+		#		if GLM_SILENT_WARNINGS == GLM_ENABLE
+		#			if GLM_COMPILER & GLM_COMPILER_CLANG
 #				pragma clang diagnostic pop
-#			elif GLM_COMPILER & GLM_COMPILER_GCC
+		#			elif GLM_COMPILER & GLM_COMPILER_GCC
 #				pragma GCC diagnostic pop
-#			elif GLM_COMPILER & GLM_COMPILER_VC
+		#			elif GLM_COMPILER & GLM_COMPILER_VC
 #				pragma warning(pop)
-#			endif
-#		endif
+		#			endif
+		#		endif
 
 		// -- Component accesses --
 
 		typedef length_t length_type;
 
 		/// Return the count of components of a quaternion
-		GLM_FUNC_DECL static GLM_CONSTEXPR length_type length(){return 4;}
+		GLM_FUNC_DECL static GLM_CONSTEXPR length_type length() { return 4; }
 
-		GLM_FUNC_DECL GLM_CONSTEXPR T & operator[](length_type i);
+		GLM_FUNC_DECL GLM_CONSTEXPR T& operator[](length_type i);
 		GLM_FUNC_DECL GLM_CONSTEXPR T const& operator[](length_type i) const;
 
 		// -- Implicit basic constructors --
 
 		GLM_FUNC_DECL GLM_CONSTEXPR qua() GLM_DEFAULT_CTOR;
 		GLM_FUNC_DECL GLM_CONSTEXPR qua(qua<T, Q> const& q) GLM_DEFAULT;
-		template<qualifier P>
+		template <qualifier P>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua(qua<T, P> const& q);
 
 		// -- Explicit basic constructors --
@@ -94,14 +97,14 @@ namespace glm
 
 		// -- Conversion constructors --
 
-		template<typename U, qualifier P>
+		template <typename U, qualifier P>
 		GLM_FUNC_DECL GLM_CONSTEXPR GLM_EXPLICIT qua(qua<U, P> const& q);
 
 		/// Explicit conversion operators
-#		if GLM_HAS_EXPLICIT_CONVERSION_OPERATORS
-			GLM_FUNC_DECL explicit operator mat<3, 3, T, Q>() const;
-			GLM_FUNC_DECL explicit operator mat<4, 4, T, Q>() const;
-#		endif
+		#		if GLM_HAS_EXPLICIT_CONVERSION_OPERATORS
+		GLM_FUNC_DECL explicit operator mat<3, 3, T, Q>() const;
+		GLM_FUNC_DECL explicit operator mat<4, 4, T, Q>() const;
+		#		endif
 
 		/// Create a quaternion from two normalized axis
 		///
@@ -120,66 +123,66 @@ namespace glm
 
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator=(qua<T, Q> const& q) GLM_DEFAULT;
 
-		template<typename U>
+		template <typename U>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator=(qua<U, Q> const& q);
-		template<typename U>
+		template <typename U>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator+=(qua<U, Q> const& q);
-		template<typename U>
+		template <typename U>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator-=(qua<U, Q> const& q);
-		template<typename U>
+		template <typename U>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator*=(qua<U, Q> const& q);
-		template<typename U>
+		template <typename U>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator*=(U s);
-		template<typename U>
+		template <typename U>
 		GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q>& operator/=(U s);
 	};
 
 	// -- Unary bit operators --
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator+(qua<T, Q> const& q);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator-(qua<T, Q> const& q);
 
 	// -- Binary operators --
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator+(qua<T, Q> const& q, qua<T, Q> const& p);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator-(qua<T, Q> const& q, qua<T, Q> const& p);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator*(qua<T, Q> const& q, qua<T, Q> const& p);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<3, T, Q> operator*(qua<T, Q> const& q, vec<3, T, Q> const& v);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> const& v, qua<T, Q> const& q);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<4, T, Q> operator*(qua<T, Q> const& q, vec<4, T, Q> const& v);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<4, T, Q> operator*(vec<4, T, Q> const& v, qua<T, Q> const& q);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator*(qua<T, Q> const& q, T const& s);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator*(T const& s, qua<T, Q> const& q);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR qua<T, Q> operator/(qua<T, Q> const& q, T const& s);
 
 	// -- Boolean operators --
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR bool operator==(qua<T, Q> const& q1, qua<T, Q> const& q2);
 
-	template<typename T, qualifier Q>
+	template <typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR bool operator!=(qua<T, Q> const& q1, qua<T, Q> const& q2);
 } //namespace glm
 

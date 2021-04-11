@@ -39,7 +39,7 @@ namespace glm
 	///
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/isnan.xml">GLSL isnan man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.3 Common Functions</a>
-	template<typename genType>
+	template <typename genType>
 	GLM_FUNC_DECL typename genType::bool_type isdenormal(genType const& x);
 
 	/// Similar to 'mod' but with a different rounding and integer support.
@@ -47,7 +47,7 @@ namespace glm
 	///
 	/// @see <a href="http://stackoverflow.com/questions/7610631/glsl-mod-vs-hlsl-fmod">GLSL mod vs HLSL fmod</a>
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/mod.xml">GLSL mod man page</a>
-	template<length_t L, typename T, qualifier Q>
+	template <length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> fmod(vec<L, T, Q> const& v);
 
 	/// Returns whether vector components values are within an interval. A open interval excludes its endpoints, and is denoted with square brackets.
@@ -58,7 +58,9 @@ namespace glm
 	///
 	/// @see ext_vector_relational
 	template <length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, bool, Q> openBounded(vec<L, T, Q> const& Value, vec<L, T, Q> const& Min, vec<L, T, Q> const& Max);
+	GLM_FUNC_DECL vec<L, bool, Q> openBounded(vec<L, T, Q> const& Value,
+											  vec<L, T, Q> const& Min,
+											  vec<L, T, Q> const& Max);
 
 	/// Returns whether vector components values are within an interval. A closed interval includes its endpoints, and is denoted with square brackets.
 	///
@@ -68,7 +70,9 @@ namespace glm
 	///
 	/// @see ext_vector_relational
 	template <length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, bool, Q> closeBounded(vec<L, T, Q> const& Value, vec<L, T, Q> const& Min, vec<L, T, Q> const& Max);
+	GLM_FUNC_DECL vec<L, bool, Q> closeBounded(vec<L, T, Q> const& Value,
+											   vec<L, T, Q> const& Min,
+											   vec<L, T, Q> const& Max);
 
 	/// @}
 }//namespace glm
